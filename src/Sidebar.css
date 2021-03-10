@@ -1,5 +1,7 @@
   .sidebar{
+    display: flex;
     flex: 0.35;
+    flex-direction: column;
 }
 
 .sidebar__header{
@@ -15,3 +17,11 @@
     justify-content: space-between;
     min-width: 10vw;
 }
+
+.sidebar_headerRight > .MuiSvgIcon-root {
+    margin-right: 2vw;
+    font-size: 24px !important;
+}
+
+
+
