@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="app">
       <div className="app__body">
-        {/* Sidebara */}
+        {/* Sidebar */}
         {/* Chat */}
       </div>
     </div>
