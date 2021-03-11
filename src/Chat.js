@@ -5,22 +5,22 @@ import "./Chat.css";
 
 function Chat() {
     const [seed, setSeed] = useState("");
-    
+
     useEffect(() => {
         setSeed(Math.floor(Math.random() * 5000));        
     }, []);
 
     return (
         <div className="chat">
-            <div className='chat_header'>
+            <div className='chat__header'>
                 <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`}/>
-                <div className='chat_headerInfo'>
+                <div className='chat__headerInfo'>
                     <h3 className='chat-room-name'>Room name</h3>
                     <p className='chat-room-last-seen'>
                         Last seen...
                     </p>
                 </div>
-                <div className="chat_headerRight">
+                <div className="chat__headerRight">
                     <IconButton>
                         <SearchOutlined/>
                     </IconButton>
