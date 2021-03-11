@@ -5,14 +5,14 @@ import "./Chat.css";
 import MicIcon from '@material-ui/icons/Mic';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import db from './firebase';
-import { useParams } from 'react-router';
-import {useStateValue} from "./StateProvider";
+import { useParams } from 'react-router-dom';
+import {useStateValue} from "./StateProvider.js";
 import firebase from "firebase";
 
 function Chat() {
     const [seed, setSeed] = useState("");
     const [input, setInput] = useState("");
-    const {roomId} = useParams;
+    const {roomId} = useParams();
     const [roomName, setRoomName] = useState("");
     const [messages, setMessages] = useState([]);
     const [{user}, dispatch] = useStateValue();
@@ -49,7 +49,7 @@ function Chat() {
         <div className="chat">
             <div className='chat__header'>
                 <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`}/>
-                <div className='chat_headerInfo'>
+                <div className='chat__headerInfo'>
                     <h3 className='chat-room-name'>{roomName}</h3>
                     <p className='chat-room-last-seen'>
                         Last seen {" "}
@@ -73,11 +73,11 @@ function Chat() {
             </div>
 
             <div className="chat__body">
-            {messages.map(message => (
-                    <p className={`chat_message ${ message.name === user.displayName && 'chat_receiver'}`}>
-                        <span className="chat_name">{message.name}</span>
+                {messages.map(message => (            
+                    <p className={`chat__message ${ message.name === user.displayName && 'chat__receiver'}`}>
+                        <span className="chat__name">{message.name}</span>
                         {message.message}
-                        <span className="chat_timestemp">{new Date(message.timestamp?.toDate()).toUTCString()}</span>
+                        <span className="chat__timestamp">{new Date(message.timestamp?.toDate()).toUTCString()}</span>
                     </p>
                 ))}
             </div>

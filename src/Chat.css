@@ -4,13 +4,13 @@
     flex-direction: column;
 }
 
-.chat-room-name{
+/* .chat-room-name{
     margin: 0px;
 }
 
 .chat-room-last-seen{
     margin: 0;
-}
+} */
 
 .chat__header{
     display: flex;
@@ -20,6 +20,7 @@
 }
 
 .chat__headerInfo{
+    /* display: flex; */
     flex: 1;
     padding-left: 20px;
 }
@@ -33,7 +34,7 @@
     color:gray;
 }
 
-.chat_headerRight{
+.chat__headerRight{
     display: flex;
     justify-content: space-between;
     min-width: 100px;
@@ -58,7 +59,7 @@
     margin-bottom: 30px;
 }
 
-.chat__receiver{
+.chat__receiver {
     margin-left: auto;
     background-color: #dcf8c6;
 }
